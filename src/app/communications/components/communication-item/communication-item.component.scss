@@ -1,0 +1,66 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// $tag-color-active: ;
+$element-height: 6px;
+
+.mat-icon {height:8px;margin:0px;padding:0;}
+.mat-icon-button {margin:0px;padding:0;}
+
+.alert-button-row {
+    display: flex;
+    padding:0;
+    margin:0;
+    align-items: center;
+    justify-content: space-around;
+}
+.alert-button-row button {
+    margin:0;padding:0;
+}
+
+.alert-warning {
+    color:orangered;
+    font-size:small;
+
+}
+.alert-star {
+    color:yellow;
+    font-size:small;
+
+}
+
+.alert-request {
+    color:blue;
+    font-size:small;
+
+}
+
+
+* { font-size:x-small;}
+
+.communication-subject {
+    font-weight: inherit;
+    vertical-align: middle;
+}
+
+.communication-new-item-count {
+    color:blue;
+    vertical-align: middle;
+}
+.communication-total-item-count {
+    vertical-align: middle;
+}
+
+.message-alert-list {height:8px;}
+
+.message-alert-list li {
+    display:inline-block;
+    margin:0px;
+    padding:0px;
+    border:0px solid red;
+}
+
+.tag-chip {
+    height:$element-height;
+    font-size:x-small;
+}

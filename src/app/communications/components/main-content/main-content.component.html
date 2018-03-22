@@ -1,0 +1,45 @@
+<div style="background-color:#ddd;padding:20px;">
+
+
+  <div>
+      <h5 style="margin-bottom:2px;font-weight:normal;">Bundles</h5>
+      <app-communication-item *ngFor="let message of bundles" [message]="message" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
+  </div>
+
+  <div style="margin-top:30px;">
+    <h5 style="margin-bottom:2px;font-weight:normal;">Individual Mail</h5>
+    <app-communication-item *ngFor="let message of individualMail" [message]="message" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
+
+  </div>
+</div>
+
+
+<!-- <div *ngIf="!user">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="user">
+  <app-communication-item></app-communication-item>
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar svgIcon="{{user.avatar}}"></mat-icon>
+      <mat-card-title>
+        <h2>{{ user.name }}</h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        Birthday {{ user.birthDate | date:'d LLLL' }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Bio">
+          <p>
+            {{user.bio}}
+          </p>
+        </mat-tab>
+        <mat-tab label="Notes">
+          <app-notes [notes]="user.notes"></app-notes>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div> -->

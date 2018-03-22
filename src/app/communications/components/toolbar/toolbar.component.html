@@ -1,0 +1,42 @@
+<!-- <mat-toolbar color="primary">
+
+  <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Contact Manager</span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openAddContactDialog()">New Contact</button>
+    <button mat-menu-item (click)="toggleTheme.emit()">Toggle theme</button>
+    <button mat-menu-item (click)="toggleDir.emit()">Toggle dir</button>
+  </mat-menu>
+
+</mat-toolbar> -->
+
+<div style="margin-left:50px;float:left;">
+    <mat-checkbox></mat-checkbox>
+    <button mat-raised-button color="primary">All</button>
+    <button mat-raised-button>Bundles</button>
+    <button mat-raised-button>Assigned to Me</button>
+    <button mat-raised-button><mat-icon>settings</mat-icon></button>
+</div>
+
+<div style="float:right;margin-right:80px;">
+
+  <mat-form-field>
+      <mat-select placeholder="Sort By">
+        <mat-option [value]="'1'">
+          All
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span>1-50 of 2000</span>
+    <button>&lt;</button>
+    <button>&gt;</button>
+</div>

@@ -1,0 +1,52 @@
+<mat-card>
+
+  <mat-card-content>
+    <div style="width:100%;">
+      <div style="width:22%;display:inline-block;">
+
+          <div style="float:left;">
+            <input type="checkbox" (change)="messageSelected($event)"/>
+            <mat-icon>content_copy</mat-icon>
+          </div>
+          <div style="float:left;">
+              <span class="communication-subject">{{message.subject}}</span>
+              <span class="communication-new-item-count">{{message.newItemCount}}</span>/
+              <span class="communication-total-item-count">{{message.totalItemCount}}</span>
+              <br/>
+              <mat-icon  *ngFor="let alert of message.statusAlerts" [ngClass]="getAlertClass(alert)">{{getAlertIcon(alert)}}</mat-icon>
+
+          </div>
+      </div>
+      <div style="width:58%;display:inline-block;">
+        <a *ngIf="message.hasAttachment">
+          <mat-icon>attach_file</mat-icon>
+        </a>
+        <span class="title">{{message.title}}</span>
+        <div>
+          <mat-chip-list>
+            <mat-chip class="tag-chip" *ngFor="let tag of message.tags" color="primary" selected="true">{{tag}}</mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+      <div style="display:inline-block;width:19%;">
+        <table style="width:100%;">
+          <tr>
+            <td>
+              <mat-icon>mail_outline</mat-icon>Email</td>
+            <td>
+              <mat-icon>date_range</mat-icon>Various</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#" mat-icon-button style="display:inline-block; text-decoration: none; background-color:green;width:8px;height:8px; color:black;"></a>Active</td>
+            <td>
+              <mat-icon>perm_identity</mat-icon>{{message.sender}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+  </mat-card-content>
+</mat-card>
