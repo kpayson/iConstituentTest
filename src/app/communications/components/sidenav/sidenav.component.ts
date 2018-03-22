@@ -1,7 +1,6 @@
 import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../models/user';
+
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material';
 import { CommunicationsService } from '../../services/communications.service';
@@ -18,13 +17,12 @@ export class SidenavComponent implements OnInit {
   private mediaMatcher: MediaQueryList =
     matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
 
-  users: Observable<User[]>;
   isDarkTheme: boolean = false;
   dir: string = 'ltr';
 
   constructor(
     zone: NgZone, 
-    private userService: UserService,
+
     private communicationsService:CommunicationsService,
     private router: Router) {
     this.mediaMatcher.addListener(mql =>
@@ -48,8 +46,6 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.users = this.userService.users;
-    this.userService.loadAll();
     this.communicationsService.loadAll();
 
     this.router.events.subscribe(() => {

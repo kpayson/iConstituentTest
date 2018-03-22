@@ -10,11 +10,8 @@ import { CommunicationsAppComponent } from './communications-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { UserService } from './services/user.service';
 import { CommunicationsService } from './services/communications.service';
 import { HttpClientModule } from '@angular/common/http';
-import { NotesComponent } from './components/notes/notes.component';
-import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component';
 import { CommunicationItemComponent } from './components/communication-item/communication-item.component';
 
 const routes: Routes = [
@@ -39,18 +36,15 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
-    UserService,CommunicationsService
+    CommunicationsService
   ],
   declarations: [
     CommunicationsAppComponent, 
     ToolbarComponent, 
     MainContentComponent, 
     SidenavComponent, 
-    NotesComponent, 
-    NewContactDialogComponent, CommunicationItemComponent
+    CommunicationItemComponent
   ], 
-  entryComponents: [
-    NewContactDialogComponent
-  ]
+  entryComponents: []
 })
 export class CommunicationsModule { }
