@@ -3,12 +3,12 @@
 
   <div>
       <h5 style="margin-bottom:2px;font-weight:normal;">Bundles</h5>
-      <app-communication-item *ngFor="let message of bundles" [message]="message" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
+      <app-communication-item *ngFor="let message of bundles" [message]="message" [isBundle]="true" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
   </div>
 
   <div style="margin-top:30px;">
     <h5 style="margin-bottom:2px;font-weight:normal;">Individual Mail</h5>
-    <app-communication-item *ngFor="let message of individualMail" [message]="message" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
+    <app-communication-item *ngFor="let message of individualMail" [message]="message" [isBundle]="false" (messageSelectChange)="messageSelectChange($event)"></app-communication-item>
 
   </div>
 </div>

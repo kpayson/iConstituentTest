@@ -11,6 +11,8 @@ export class CommunicationItemComponent implements OnInit {
 
   constructor() { }
   @Input() message:CommunicationItem
+  @Input() isBundle:boolean
+  
   @Output() messageSelectChange = new EventEmitter<any>();
 
   ngOnInit() {

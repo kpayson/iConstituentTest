@@ -10,8 +10,9 @@
           </div>
           <div style="float:left;">
               <span class="communication-subject">{{message.subject}}</span>
-              <span class="communication-new-item-count">{{message.newItemCount}}</span>/
-              <span class="communication-total-item-count">{{message.totalItemCount}}</span>
+              <span *ngIf="isBundle">
+                <span class="communication-new-item-count" >{{message.newItemCount}}</span>/<span class="communication-total-item-count">{{message.totalItemCount}}</span>
+              </span>
               <br/>
               <mat-icon  *ngFor="let alert of message.statusAlerts" [ngClass]="getAlertClass(alert)">{{getAlertIcon(alert)}}</mat-icon>
 
